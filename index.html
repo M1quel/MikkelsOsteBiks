@@ -8,12 +8,59 @@
 </head>
 <body>
     <header>
-        <nav>
-            
+        <nav class="navigationBar">
+            <div class="navigation">
+                <input id="navigationCheck" name="navigationCheck" type="checkbox">
+                <label class="navigationLabel" for="navigationCheck" id="navigationLabel">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <div class="navigationContent">
+
+                <div class="navigationContentWrapper">
+                    <h1 class="navigationContentHeading">Update, Add or Delete Cheese</h1>
+
+                    <button class="updateBtn">Update</button>
+                    <button class="addBtn">Add</button>
+                    <button class="deleteBtn">Delete</button>
+                </div>
+                
+                
+                
+                </div>
+            </div>
+            <a class="heading" href="#!"><h1>Mikkels Ostebiks</h1></a>
         </nav>
     </header>
+    
+    
+    
+    
+    
+    
+    <main>
+        <div class="cheeseContainer">
+        </div>
+        <button data-src="" class="loadMoreBtn">Load more</button>
+    </main>
 
-
-    <script src="app.js"></script>
+    <template id="cheeseTemplate">
+        <article class="cheese" data-id="">
+            <div class="cheeseHeader">
+            </div>
+            <div class="cheeseMain">
+                <h2 class="cheeseHeading">Ost</h2>
+                <p class="cheesePrice">1000 DKK</p>
+                <p class="cheeseWeight">100g</p>
+                <p class="cheeseStrength">mild</p>
+                <p class="cheeseBrand">Arla</p>
+            </div>
+        </article>
+    </template>
+    <template id="optionTemplate">
+        <option value=""></option>
+    </template>
+    <script type="module" src="app.js"></script>
 </body>
 </html>
