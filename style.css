@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    background: transparent;
+}
+img, input {
+    display: block;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* navigation */
+.navigationBar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 10vh;
+    width: 100vw;
+    background-color: #ffc82f;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.navigationLabel {
+    margin-left: 50px;
+    position: relative;
+    z-index: 999;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.navigationLabel span {
+    border-radius: 3.5px;
+    height: 7px;
+    width: 40px;
+    background-color: #264653;
+    display: block;
+}
+
+.navigationContent {
+    transition: transform .5s;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 500px;
+    background-color: rgb(240, 183, 27);
+    transform: translateX(-110%);
+}
+
+#navigationCheck {
+    display: none;
+}
+
+#navigationCheck:checked ~ .navigationContent {
+    transform: translateX(0);
+}
+
+
+/* navigation content */
+.navigationContentWrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10vh;
+}
+
+
+
+
+/* main */
+
+body {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    background-color: #ffecb9;
+    overflow-x: hidden;
+}
+main {
+    margin-top: 10vh;
+    background-color: #ffda75;
+    width: 50vw;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:  0 0 50px 0;
+}
+.cheeseContainer{
+    margin: 40px 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+}
+
+.loadMoreBtn {
+    height: 50px;
+    width: 100px;
+    background-color: #fff;
+}
+
+
+/* Ost */
+
+.cheese {
+    width: 100%;
+    height: 350px;
+    background-color: #ffc82f;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.cheeseHeader {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://via.placeholder.com/100.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 50%;
+}
+
+.cheeseMain {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "Heading Heading Heading""price . weight""strength . brand";
+}
+
+.cheeseHeading {
+    grid-area: Heading;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cheesePrice {
+    grid-area: price;
+}
+
+.cheeseWeight {
+    grid-area: weight;
+}
+
+.cheeseStrength {
+    grid-area: strength;
+}
+
+.cheeseBrand {
+    grid-area: brand;
+}
+
+
+
+/* #region updateCheese*/
+
+    .updateRow {
+        display: flex;
+    }
+    .updateForm input {
+        background-color: white;
+        color: black;
+    }
+
+/* #endregion updateCheese*/
