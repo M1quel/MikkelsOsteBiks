@@ -98,17 +98,35 @@ function navigationContent () {
 
     function addCheese() {
         let html = `
+
+        <h1 class="navigationContentHeading">Add cheese information</h1>
         <form class="addForm">
-            <input name="name" class="addName" type="text">
+            <label for="addCheeseName">Cheese name</label>
+            <input id="addCheeseName" placeholder="Cheese name" name="name" class="addName" type="text">
             <div class="addRow">
-                <input name="price" class="addPrice" type="decimal">
-                <input name="weight" class="addWeight" type="number">
+                <div class="inputWrapper">
+                    <label for="addCheesePrice">Cheese price</label>
+                    <input id="addCheesePrice" placeholder="Cheese price" name="price" class="addPrice" type="decimal">
+                </div>
+                
+                <div class="inputWrapper">
+                    <label for="addCheeseWeight">Cheese weight</label>
+                    <input id="addCheeseWeight" placeholder="Cheese weight" name="weight" class="addWeight" type="number">
+                </div>
             </div>
             <div class="addRow">
-                <input name="strength" class="addStrength" type="text">
-                <input name="brand" class="addBrand" type="text">
+                <div class="inputWrapper">
+                    <label for="addCheeseStrength">Cheese strength</label>
+                    <input id="addCheeseStrength" placeholder="Cheese strength" name="strength" class="addStrength" type="text">
+                    
+                </div>
+
+                <div class="inputWrapper">
+                    <label for="addCheeseBrand">Cheese brand</label>
+                    <input id="addCheeseBrand" placeholder="Cheese brand" name="brand" class="addBrand" type="text">
+                </div>
             </div>
-            <input name="img" class="addImg" type="text">
+            <input placeholder="Cheese img url" name="img" class="addImg" type="text">
 
 
             <button type="submit">Add cheese</button>
@@ -150,7 +168,8 @@ function navigationContent () {
                 }
             })
             .then(res => {
-                if(res.status = 201) {
+                console.log(res)
+                if(res.status == 201) {
                     alert("Cheese has been added succesfully")
                     return;
                 } else {

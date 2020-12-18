@@ -3,29 +3,29 @@ import navigationContent from "./navigationContent.js";
 var baseURL = "https://osteapi-miquel.herokuapp.com/api/v1/cheeses";
 
 function unfoldUpdate (event) {
+    document.querySelector(".navigationContentWrapper").querySelector("select").remove()
+    document.querySelector(".returnToStart").remove(document.querySelector(".returnToStart"))
     let id = event.target.value;
     let html = `
     <form class="updateForm">
-        <input class="updateName" type="text">
+        <input placeholder="cheeseName" class="updateName" type="text">
         <div class="updateRow">
-            <input class="updatePrice" type="decimal">
-            <input class="updateWeight" type="number">
+            <input placeholder="Cheese price" class="updatePrice" type="decimal">
+            <input placeholder="Cheese weight" class="updateWeight" type="number">
         </div>
         <div class="updateRow">
-            <input class="updateStrength" type="text">
-            <input class="updateBrand" type="text">
+            <input placeholder="Cheese strength" class="updateStrength" type="text">
+            <input placeholder="Cheese brand" class="updateBrand" type="text">
         </div>
-        <input class="updateImg" type="text">
+        <input placeholder="Cheese img url" class="updateImg" type="text">
 
 
         <button type="submit">Submit</button>
     </form>
     <button class="returnToStart">Return</button>
     `;
-
     document.querySelector(".navigationContentWrapper").innerHTML += html;
-    document.querySelectorAll(".returnToStart")[0].parentElement.remove(document.querySelectorAll(".returnToStart")[0])
-    document.querySelectorAll(".returnToStart")[0].addEventListener("click", () => {
+    document.querySelector(".returnToStart").addEventListener("click", () => {
         let html = `
             <h1 class="navigationContentHeading">Update, Add or Delete Cheese</h1>
     
